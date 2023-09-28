@@ -1,19 +1,18 @@
 from flask import Flask, render_template
 
-class Jogo:
-    def __init__(self, nome, categoria, console):
+class User:
+    def __init__(self, nome, senha, departamento):
         self.nome = nome
-        self.categoria = categoria
-        self.console = console
+        self.senha = senha
+        self.departamento = departamento
+
+listaUsers = []
         
 app = Flask(__name__)
 
-@app.route('/inicio') #definição da rota de aplicação
+@app.route('/login') #definição da rota de aplicação
 
-def ola():
-    jogo1 = Jogo('bom de guerra', 'ação', 'ps5')
-    jogo2 = Jogo('mentiras de pi', 'ação', 'xbox')
-    lista = [jogo1, jogo2]
-    return render_template('lista.html', jogos = lista)
+def login():
+    return render_template('login.html')
 
 app.run() #iniciar projeto
