@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Portal do Usuário</title>
+    <link rel="stylesheet" href="../static/bootstrap.css">
     <style>
         body{
             height: 100%;
@@ -14,7 +15,7 @@
             sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            background-image: url('../src/1.jpg');
+            background-image: url("{{ url_for('static', filename='1.jpg') }}");
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -101,9 +102,10 @@
                 name="lname"
                 placeholder="senha"
               />
+              <a href="{{ url_for('criar') }}">criar usuário</a>
             </p>
             <p>
-              <button id="meuBotao" class="botao-personalizado" onclick="alert('Botão clicado!')">Entrar</button>
+              <button type="submit">Entrar</button>
             </p>
         </form>
     </section>
