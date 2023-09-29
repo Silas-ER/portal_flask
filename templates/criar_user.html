@@ -1,35 +1,27 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Criação de usuário</title>
-        <link rel="stylesheet" href="../static/bootstrap.css">
-    </head>
-    <body>
-        <form action="/salvarnovo" method="post">
-            <h1>Criação de usuário</h1>
-            <p>
-                <label>Login: </label>
-                <input 
-                type="text" 
-                name="username" 
-                placeholder="usuário"
-                />
-                <label>Senha: </label>
-                <input 
-                type="password" 
-                name="password" 
-                placeholder="senha"
-                />
-                <label>Departamento: </label>
-                <input 
-                type="text" 
-                name="dpt"
-                placeholder="dpt" 
-                />
-                <button type="submit">Cadastrar</button>
+{% extends “template.html” %}
+{% block conteudo %}
+    <form action="/salvarnovo" method="post">
+        <h1>Criação de usuário</h1>
+        <p>
+            <label>Login: </label>
+            <input 
+            type="text" 
+            name="username" 
+            placeholder="usuário"
+            />
+            <label>Senha: </label>
+            <input 
+            type="password" 
+            name="password" 
+            placeholder="senha"
+            />
+            <label>Departamento: </label>
+            <input 
+            type="text" 
+            name="dpt"
+            placeholder="dpt" 
+            />
+            <button type="submit">Cadastrar</button>
             </p>
         </form>       
-    </body>
-</html>
+{% endblock %}

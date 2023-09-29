@@ -11,18 +11,15 @@ listaUsers = []
 app = Flask(__name__)
 
 @app.route('/login') #definição da rota de aplicação
-
 def login():
     return render_template('login.html')
 
 @app.route('/criar', methods=['GET', 'POST'])
-
 def criar():     
     return render_template('criar_user.html')
 
 #criação de novo usuário
 @app.route('/salvarnovo', methods=['POST'])
-
 def salvarnovo():
     nome = request.form['username']
     senha = request.form['password']
@@ -30,4 +27,10 @@ def salvarnovo():
     usuario = User(nome, senha, departamento) 
     listaUsers.append(usuario)
     return redirect('/login')
-app.run() #iniciar projeto e o debugger para rodar direto
+
+#página de relatórios
+@app.route('/relatorios', methods=['GET', 'POST'])
+def relatorios():
+    return render_template('relatorios.html')
+
+app.run() #iniciar projeto 
