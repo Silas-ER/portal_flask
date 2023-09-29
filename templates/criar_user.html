@@ -1,27 +1,15 @@
-{% extends “template.html” %}
+{% extends 'template.html' %}
 {% block conteudo %}
-    <form action="/salvarnovo" method="post">
-        <h1>Criação de usuário</h1>
-        <p>
-            <label>Login: </label>
-            <input 
-            type="text" 
-            name="username" 
-            placeholder="usuário"
-            />
-            <label>Senha: </label>
-            <input 
-            type="password" 
-            name="password" 
-            placeholder="senha"
-            />
-            <label>Departamento: </label>
-            <input 
-            type="text" 
-            name="dpt"
-            placeholder="dpt" 
-            />
-            <button type="submit">Cadastrar</button>
-            </p>
-        </form>       
+<form action="/salvarnovo" method="post">
+    <h1>Criação de usuário</h1>
+    <p>
+        <label>Login: </label>
+        <input type="text" name="username" placeholder="usuário" />
+        <label>Senha: </label>
+        <input type="password" name="password" placeholder="senha" />
+        <label>Departamento: </label>
+        <input type="text" name="dpt" placeholder="dpt" />
+        <button type="submit">Cadastrar</button>
+    </p>
+</form>
 {% endblock %}
