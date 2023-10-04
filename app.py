@@ -8,11 +8,27 @@ class User:
 
 listaUsers = []
         
+first_user = User("silas", "12345", "TI")
+listaUsers.append(first_user)
+
 app = Flask(__name__)
 
+#pagina inicial de login
 @app.route('/login') #definição da rota de aplicação
 def login():
     return render_template('login.html')
+
+#rota para login de usuario
+@app.route('/logar', methods=['GET', 'POST'])
+def logar():
+    username = request.form['username']
+    password = request.form['password']
+
+    for user in listaUsers:
+        if user.nome == username and user.senha == password:
+            return redirect('/home')
+    
+    return render_template('login.html', error_message="Usuário não encontrado!")
 
 @app.route('/criar', methods=['GET', 'POST'])
 def criar():     
@@ -32,5 +48,9 @@ def salvarnovo():
 @app.route('/relatorios', methods=['GET', 'POST'])
 def relatorios():
     return render_template('relatorios.html')
+
+@app.route('/home', methods=['GET',])
+def home():
+    return render_template('home.html')
 
 app.run() #iniciar projeto 
