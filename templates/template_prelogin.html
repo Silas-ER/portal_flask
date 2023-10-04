@@ -73,6 +73,16 @@
     <header>
         <img src="{{ url_for('static', filename='logo.png') }}" alt="logo" width="250px"/>
     </header>
+    
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul id="messages" class="list-unstyled">
+        {% for message in messages %}
+        <li class="alert alert-success">{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
 
     {% block conteudo %} {% endblock %}
 
