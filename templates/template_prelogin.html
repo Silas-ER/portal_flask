@@ -6,6 +6,8 @@
     <title>Portal do Usuário</title>
     <link rel="stylesheet" href="../static/bootstrap.css">
     <link rel="stylesheet" href="../static/user.css">
+    <link rel="stylesheet" href="../static/footer.css">
+    <link rel="stylesheet" href="../static/header.css">
     <style>
         body{
             height: 100%;
@@ -21,13 +23,6 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-position: center;
-        }
-        header{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            background-color: #03D7FD;
         }
         ul{
             list-style: none;
@@ -58,19 +53,10 @@
             justify-content: center;
             align-items: center;
         }
-        footer{
-            font-size: 12px;
-            position: fixed;
-            background-color: #F0BCB1;
-            bottom: 0; 
-            left: 0; 
-            width: 100%;
-            text-align: center;
-        }
     </style>
   </head>
   <body>
-    <header>
+    <header class="header-template">
         <img src="{{ url_for('static', filename='logo.png') }}" alt="logo" width="250px"/>
     </header>
     
@@ -86,7 +72,7 @@
 
     {% block conteudo %} {% endblock %}
 
-    <footer>
+    <footer class="footer-template">
         <p>Produzido pelo departamento de TI - <a href="https://produmar.ind.br/" target='blank'>Produmar</a> &#169;</p>
     </footer>
   </body>

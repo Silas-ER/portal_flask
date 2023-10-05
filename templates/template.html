@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Portal do Usuário</title>
     <link rel="stylesheet" href="../static/bootstrap.css">
+    <link rel="stylesheet" href="../static/footer.css">
+    <link rel="stylesheet" href="../static/header.css">
     <style>
         body {
             height: 100%;
@@ -22,15 +24,6 @@
             background-attachment: fixed;
             background-position: center;
         }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            background-color: #03D7FD;
-        }
-
         ul {
             list-style: none;
             display: flex;
@@ -63,40 +56,24 @@
             justify-content: center;
             align-items: center;
         }
-
-        footer {
-            font-size: 12px;
-            position: fixed;
-            background-color: #F0BCB1;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            text-align: center;
-        }
     </style>
 </head>
 
 <body>
-    <header>
+    <header class="header-template">
         <img src="../src/logo.png" alt='logo' width='250px' />
         <nav>
             <ul>
-                <li>
-                    Relatórios
-                </li>
-                <li>
-                    Suporte
-                </li>
-                <li>
-                    Solicitações
-                </li>
+                <li><a href="{{ url_for('relatorios') }}">Relatórios</a></li>
+                <li><a>Suporte</a></li>
+                <li><a>Solicitações</a></li>
             </ul>
         </nav>
     </header>
     
     {% block conteudo %} {% endblock %}
 
-    <footer>
+    <footer class="footer-template">
         <p>Produzido pelo departamento de TI - <a href="https://produmar.ind.br/" target='blank'>Produmar</a> &#169;</p>
     </footer>
 </body>

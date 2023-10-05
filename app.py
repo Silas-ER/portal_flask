@@ -57,8 +57,14 @@ def salvarnovo():
 
 @app.route('/home', methods=['GET',])
 def home():
-    if 'usuario_logado' not in session or session['usuario_logado'] = None:
+    if 'usuario_logado' not in session or session['usuario_logado'] == None:
         return redirect('/login')
     return render_template('home.html')
 
-app.run() #iniciar projeto 
+@app.route('/relatorios', methods=['GET', 'POST'])
+def relatorios():
+    if 'usuario_logado' not in session or session['usuario_logado'] == None:
+        return redirect('/login')
+    return render_template('relatorios.html')
+
+app.run(debug=True) #iniciar projeto 
