@@ -61,12 +61,13 @@
 
 <body>
     <header class="header-template">
-        <img src="../src/logo.png" alt='logo' width='250px' />
+        <img src="{{ url_for('static', filename='logo.png') }}" alt='logo' width='250px' />
         <nav>
             <ul>
                 <li><a href="{{ url_for('relatorios') }}">Relatórios</a></li>
                 <li><a>Suporte</a></li>
                 <li><a>Solicitações</a></li>
+                <li><a href="{{ url_for('deslogar') }}">Sair</a></li>
             </ul>
         </nav>
     </header>

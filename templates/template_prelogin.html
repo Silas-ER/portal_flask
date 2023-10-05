@@ -60,6 +60,8 @@
         <img src="{{ url_for('static', filename='logo.png') }}" alt="logo" width="250px"/>
     </header>
     
+    {% block conteudo %} {% endblock %}
+
     {% with messages = get_flashed_messages() %}
     {% if messages %}
     <ul id="messages" class="list-unstyled">
@@ -69,9 +71,7 @@
     </ul>
     {% endif %}
     {% endwith %}
-
-    {% block conteudo %} {% endblock %}
-
+    
     <footer class="footer-template">
         <p>Produzido pelo departamento de TI - <a href="https://produmar.ind.br/" target='blank'>Produmar</a> &#169;</p>
     </footer>
