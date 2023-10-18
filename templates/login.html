@@ -1,23 +1,27 @@
 {% extends 'template_prelogin.html' %}
 {% block conteudo %}
-<section>
-  <form action="/logar" method="post" class="mb-3">
+<section class="section-flex-login">
+  <form action="/logar" method="post" >
     <h1>Entrar no sistema</h1>
+
     <section class="input-group mb-3">
-      <span class="input-group-text" id="basic-addon1">Usuário</span>
+      <span class="input-group-text" id="basic-addon1">Usuário:</span>
       <input type="text" class="form-control" id="username" placeholder="usuário" name="username"
         aria-describedby="basic-addon1">
     </section>
+
     <section class="input-group mb-3">
-      <span class="input-group-text" id="basic-addon1">Senha</span>
+      <span class="input-group-text" id="basic-addon1">Senha:</span>
       <input type="password" class="form-control" id="password" placeholder="*****" name="password"
         aria-describedby="basic-addon1">
     </section>
+
     <section>
       <p>
-        Não cadastrado? <a href="{{ url_for('criar') }}">criar usuário</a>
+        Não cadastrado? <a href="{{ url_for('criar') }}">Criar Usuário</a>
       </p>
     </section>
+
     <section>
       <button type="submit" class="btn btn-primary">Entrar</button>
     </section>

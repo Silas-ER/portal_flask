@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+    
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,54 +8,9 @@
     <link rel="stylesheet" href="../static/bootstrap.css">
     <link rel="stylesheet" href="../static/user.css">
     <link rel="stylesheet" href="../static/footer.css">
-    <link rel="stylesheet" href="../static/header.css">
-    <style>
-        body{
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-            'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-            sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            background-image: url("{{ url_for('static', filename='src/1.jpg') }}");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: center;
-        }
-        ul{
-            list-style: none;
-            display: flex;
-            padding: 10px 40px;
-        }
-        li{
-            margin-left: 20px;
-            cursor: pointer;
-        }
-        section{
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            height: 100%; 
-        }
-        form{
-            border: 5px solid black;
-            border-radius: 8px;
-            margin-top: 10%;
-            padding: 5px;
-            width: 90%;
-            max-width: 400px;
-            background-color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-    </style>
+    <link rel="stylesheet" href="../static/pre-login.css">
   </head>
+
   <body>
     <header class="header-template">
         <img src="{{ url_for('static', filename='logo.png') }}" alt="logo" width="250px"/>
