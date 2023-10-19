@@ -1,0 +1,27 @@
+.header-template{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #03D7FD;
+    border-bottom: 1px solid black;
+}
+
+.nav-menu{
+    display: flex;
+    align-items: center;
+}
+
+.menu-list{
+    display: flex;
+}
+
+.menu-list-item{
+    padding-top: 8px;
+    padding-right: 18px;
+    list-style: none;
+}
+
+.hyperlink-clean{
+    text-decoration: none;
+}

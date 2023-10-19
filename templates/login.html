@@ -1,19 +1,21 @@
 {% extends 'template_prelogin.html' %}
 {% block conteudo %}
 <section class="section-flex-login">
-  <form action="/logar" method="post" >
+  <form class="section-form" action="/logar" method="post" >
     <h1>Entrar no sistema</h1>
 
-    <section class="input-group mb-3">
-      <span class="input-group-text" id="basic-addon1">Usuário:</span>
-      <input type="text" class="form-control" id="username" placeholder="usuário" name="username"
-        aria-describedby="basic-addon1">
-    </section>
-
-    <section class="input-group mb-3">
-      <span class="input-group-text" id="basic-addon1">Senha:</span>
-      <input type="password" class="form-control" id="password" placeholder="*****" name="password"
-        aria-describedby="basic-addon1">
+    <section class="section-form-login">
+      <section class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Usuário:</span>
+        <input type="text" class="form-control" id="username" placeholder="usuário" name="username"
+          aria-describedby="basic-addon1">
+      </section>
+  
+      <section class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Senha:</span>
+        <input type="password" class="form-control" id="password" placeholder="*****" name="password"
+          aria-describedby="basic-addon1">
+      </section>
     </section>
 
     <section>

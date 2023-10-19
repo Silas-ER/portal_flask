@@ -1,10 +1,8 @@
-.section-home {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+.card-item{
+    border: 5px black;
+    background-color: white;
 }
-.item-menu {
-    border: black;
+
+.menu-cards{
+    display: flex; 
 }
