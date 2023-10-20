@@ -67,4 +67,16 @@ def relatorios():
         return redirect('/login')
     return render_template('relatorios.html')
 
+@app.route('/solicitacoes')
+def solicitacoes():
+    if 'usuario_logado' not in session or session['usuario_logado'] == None:
+        return redirect('/login')
+    return render_template('solicitacoes.html')
+
+@app.route('/suporte')
+def suporte():
+    if 'usuario_logado' not in session or session['usuario_logado'] == None:
+        return redirect('/login')
+    return render_template('suporte.html')
+
 app.run(debug=True) #iniciar projeto 

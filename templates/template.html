@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../static/footer.css">
     <link rel="stylesheet" href="../static/header.css">
     <link rel="stylesheet" href="../static/home.css">
+    <link rel="stylesheet" href="../static/relatorios/relatorios.css"
 </head>
 
 <body class="body-home">
@@ -18,16 +19,14 @@
         <nav class="nav-menu">
             <ul class="menu-list">
                 <li class="menu-list-item"><a class="hyperlink-clean" href="{{ url_for('relatorios') }}">Relatórios</a></li>
-                <li class="menu-list-item"><a class="hyperlink-clean">Suporte</a></li>
-                <li class="menu-list-item"><a class="hyperlink-clean">Solicitações</a></li>
+                <li class="menu-list-item"><a class="hyperlink-clean" href="{{ url_for('suporte') }}">Suporte</a></li>
+                <li class="menu-list-item"><a class="hyperlink-clean" href="{{ url_for('solicitacoes') }}">Solicitações</a></li>
                 <li class="menu-list-item"><a class="hyperlink-clean" href="{{ url_for('deslogar') }}">Sair</a></li>
             </ul>
         </nav>
     </header>
 
-    <section>
-        {% block conteudo %} {% endblock %}
-    </section>
+    {% block conteudo %} {% endblock %}
 
     <footer class="footer-template">
         <p>Produzido pelo departamento de TI - <a href="https://produmar.ind.br/" target='blank'>Produmar</a> &#169;</p>

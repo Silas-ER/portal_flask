@@ -1,11 +1,12 @@
 {% extends "template.html" %}
 {% block conteudo %}
+<section class="menu-cards">
     <section class="card-item">
         <h2>Relatórios</h2>
         <p>
             Página com Relatórios de entradas de pescado, exportações, vendas.
         </p>
-        <a class="btn btn-primary">Ir</a>
+        <a href="{{ url_for('relatorios')}}" class="btn btn-primary">Ir até a Página</a>
     </section>
 
     <section class="card-item">
@@ -13,7 +14,7 @@
         <p>
             Em construção
         </p>
-        <a class="btn btn-primary">Ir</a>
+        <a href="{{ url_for('solicitacoes')}}" class="btn btn-primary">Ir até a Página</a>
     </section>
 
     <section class="card-item">
@@ -21,6 +22,7 @@
         <p>
             Em construção
         </p>
-        <a class="btn btn-primary">Ir</a>
+        <a href="{{ url_for('suporte')}}" class="btn btn-primary">Ir até a Página</a>
     </section>
+</section>
 {% endblock %}
