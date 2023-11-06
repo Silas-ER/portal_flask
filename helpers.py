@@ -11,6 +11,6 @@ class FormularioCadastro(FlaskForm):
     #salvar = 
 
 class FormularioLogin(FlaskForm):
-    nickname = StringField('username', validators=[DataRequired(), Length(min=1, max=50)])
-    password = PasswordField('password', validators=[DataRequired(), Length(min=1, max=100)])
-    entrar = SubmitField('Login')
+    nickname = StringField('Usuário', validators=[DataRequired(), Length(min=1, max=50)])
+    password = PasswordField('Senha', validators=[DataRequired(), Length(min=1, max=100)])
+    entrar = SubmitField('Entrar')

@@ -1,21 +1,19 @@
 {% extends 'template_prelogin.html' %}
 {% block conteudo %}
 <section class="section-flex-login">
-  <form class="section-form" action="/logar" method="post" >
-    {{ form.csrf_token() }}
+  <form class="section-form" action="/logar" method="post">
+    {{ form.hidden_tag() }} {# Adicione o campo de token CSRF #}
     <h1>Entrar no sistema</h1>
 
     <section class="section-form-login">
       <section class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1">Usuário:</span>
-        <input type="text" class="form-control" id="username" placeholder="usuário" name="username"
-          aria-describedby="basic-addon1">
+        {{ form.nickname(class="form-control", id="username", placeholder="usuário") }}
       </section>
   
       <section class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1">Senha:</span>
-        <input type="password" class="form-control" id="password" placeholder="*****" name="password"
-          aria-describedby="basic-addon1">
+        {{ form.password(class="form-control", id="password", placeholder="*****") }}
       </section>
     </section>
 
@@ -27,7 +25,6 @@
 
     <section>
       {{ form.entrar(class="btn btn-primary") }}
-      <!--<button type="submit" class="btn btn-primary">Entrar</button>-->
     </section>
   </form>
 </section>

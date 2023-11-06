@@ -1,5 +1,6 @@
 from flask import render_template, url_for, request, redirect, session, flash
 from app import app, db
+from werkzeug.security import check_password_hash
 from models import Usuarios 
 from helpers import FormularioLogin
 from flask_bcrypt import check_password_hash
@@ -10,24 +11,23 @@ def login():
     form = FormularioLogin()
     return render_template('login.html', form=form)
 
-#rota para login de usuario
 @app.route('/logar', methods=['GET', 'POST'])
 def logar():
-    form = FormularioLogin(request.form)
-    senha = check_password_hash(usuario.senha, form.password.data)
+    form = FormularioLogin()
 
-    if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
-        
+    if form.validate_on_submit():
+        username = form.nickname.data
+        password = form.password.data
+
         usuario = Usuarios.query.filter_by(nickname=username).first()
-        if usuario:
-            if senha:
-                flash('Logado com sucesso!')
-                return render_template('home.html')  
-        
-        flash('Usuário ou senha incorretos!')  
-    return redirect(url_for('login'))
+        if usuario and check_password_hash(usuario.senha, password):
+            flash('Logado com sucesso!')
+            session['usuario_logado'] = username  # Defina a sessão do usuário
+            return redirect(url_for('home'))  # Redirecione para a rota 'home'
+
+        flash('Usuário ou senha incorretos!')
+
+    return render_template('login.html', form=form)  # Redirecione para a página de login ('login.html')
 
 #rota para deslogar
 @app.route('/deslogar')
